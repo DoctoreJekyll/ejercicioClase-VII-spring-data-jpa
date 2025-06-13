@@ -2,11 +2,14 @@ package org.cplcursos.ejercicioclaseviispringweb.entidades;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 
 @Getter
@@ -26,6 +29,8 @@ public class Empleado {
         private String codigoOficina;
         private Integer codigoJefe; // Puede ser null
         private String puesto;
+        @OneToMany
+        private List<Cliente> clientes;
 
         public String toString() {
             return "Empleado [codigoEmpleado=" + codigoEmpleado + ", nombre=" + nombre + ", apellido1=" + apellido1 +

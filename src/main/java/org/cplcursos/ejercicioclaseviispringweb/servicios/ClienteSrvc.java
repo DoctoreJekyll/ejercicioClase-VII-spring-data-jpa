@@ -1,7 +1,7 @@
 package org.cplcursos.ejercicioclaseviispringweb.servicios;
 
 import lombok.RequiredArgsConstructor;
-import org.cplcursos.ejercicioclaseviispringweb.DTOs.ClienteDTOLista;
+import org.cplcursos.ejercicioclaseviispringweb.entidades.Cliente;
 import org.cplcursos.ejercicioclaseviispringweb.repositorios.ClienteRepo;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +13,8 @@ public class ClienteSrvc {
 
     private final ClienteRepo clienteRepo;
 
-    public List<ClienteDTOLista> listarTodos(){
-        return clienteRepo.finAllDTOs();
+    public List<Cliente> listarTodos(){
+        return clienteRepo.findAll();
     }
 
 }

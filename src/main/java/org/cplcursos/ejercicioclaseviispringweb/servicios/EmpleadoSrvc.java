@@ -1,30 +1,25 @@
 package org.cplcursos.ejercicioclaseviispringweb.servicios;
 
-import org.cplcursos.ejercicioclaseviispringweb.DTOs.EmpleadoDTOForm;
-import org.cplcursos.ejercicioclaseviispringweb.DTOs.EmpleadoDTOLista;
-import org.cplcursos.ejercicioclaseviispringweb.DTOs.EmpleadoDTOSinCiudad;
 import org.cplcursos.ejercicioclaseviispringweb.entidades.Empleado;
-import org.cplcursos.ejercicioclaseviispringweb.mapeadores.EmpleadoMapper;
 import org.cplcursos.ejercicioclaseviispringweb.repositorios.EmpleadoRepo;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @Service
 public class EmpleadoSrvc {
     private final EmpleadoRepo empleadoRepo;
-    private EmpleadoMapper empleadoMapper;
+    //private EmpleadoMapper empleadoMapper;
 
-    public EmpleadoSrvc(EmpleadoRepo empleadoRepo, EmpleadoMapper empleadoMapper) {
+    public EmpleadoSrvc(EmpleadoRepo empleadoRepo) {
         this.empleadoRepo = empleadoRepo;
-        this.empleadoMapper = empleadoMapper;
+        //this.empleadoMapper = empleadoMapper;
     }
 
-    public List<EmpleadoDTOLista> listarTodos() {
-        return empleadoRepo.findAllDtos();
+    public List<Empleado> listarTodos() {
+        return empleadoRepo.findAll();
     }
-
+/*
     public List<EmpleadoDTOSinCiudad> listarEmpleadoSinCiudad() {
         return empleadoRepo.listaEmpleadosSinCiudad();
     }
@@ -40,7 +35,7 @@ public class EmpleadoSrvc {
                 })
                 .orElseGet(() -> empleadoMapper.toDTOFormVacio());
     }
-
+*/
     public void grabarEmpleado(Empleado emp) {
         empleadoRepo.save(emp);
     }
