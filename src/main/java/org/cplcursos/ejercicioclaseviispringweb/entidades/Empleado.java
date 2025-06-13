@@ -13,6 +13,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 @Entity
 @Table(name ="empleado")
 public class Empleado {
@@ -29,9 +30,6 @@ public class Empleado {
 
         @OneToMany
         private List<Cliente> clientes;
-
-        public Empleado(Integer integer, String nombre, String s, String s1, String extension, String email, String s2, Integer integer1, String puesto) {
-        }
 
 
         public String toString() {

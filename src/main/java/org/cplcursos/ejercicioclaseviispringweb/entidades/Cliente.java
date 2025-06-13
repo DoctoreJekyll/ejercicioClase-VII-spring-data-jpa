@@ -3,13 +3,12 @@ package org.cplcursos.ejercicioclaseviispringweb.entidades;
 import jakarta.persistence.*;
 import lombok.*;
 
-
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+
 @Entity
 @Table(name = "cliente")
 public class Cliente {

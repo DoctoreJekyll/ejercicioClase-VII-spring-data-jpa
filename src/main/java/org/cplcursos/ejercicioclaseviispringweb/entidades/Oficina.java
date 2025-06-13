@@ -15,6 +15,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 @Entity
 @Table(name="oficina")
 public class Oficina {
@@ -27,6 +28,7 @@ public class Oficina {
     private String telefono;
     private String lineaDireccion1;
     private String lineaDireccion2;
+
     @OneToMany
     private List<Empleado> empleados;
 
