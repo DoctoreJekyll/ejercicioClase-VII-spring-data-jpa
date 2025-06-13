@@ -1,9 +1,6 @@
 package org.cplcursos.ejercicioclaseviispringweb.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 
@@ -22,7 +19,9 @@ public class Cliente {
     private String telefono;
     private String lineaDireccion1;
     private String ciudad;
+
     @ManyToOne
+    @JoinColumn(name = "codigo_empleado_rep_ventas")
     private Empleado repVentas;
     // Otros campos que no se usarán en la lista...
 }
