@@ -30,6 +30,11 @@
     </header>
 
     <main class="container my-4">
+
+        <div class="col-12">
+            <h1 class="text-center" th:text="${error}"></h1>
+        </div>
+
         <h2 class="mb-4 text-center">Listado de Pedidos</h2>
         <div class="accordion" id="accordionPedidos">
             <div class="accordion-item" th:each="p, stat : ${pedidos}">
@@ -40,6 +45,7 @@
                             aria-expanded="true">
                         Pedido de <strong th:text="${p.codigoCliente}" class="ms-2"></strong> |
                         <span class="ms-2">Estado: <strong th:text="${p.estado}"></strong></span>
+                        <span class="ms-2">| Codigo Pedido: <strong th:text="${p.codigoPedido}"></strong></span>
                     </button>
                 </h2>
                 <div th:attr="id='collapse__' + ${stat.index}"
